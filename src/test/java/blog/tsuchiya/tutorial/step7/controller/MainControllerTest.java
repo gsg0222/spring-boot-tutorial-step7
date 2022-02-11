@@ -23,7 +23,7 @@ class MainControllerTest {
 
 	@BeforeEach
 	void setup() {
-		// // @formatter:off
+		// @formatter:off
 		mockMvc = MockMvcBuilders
 				.webAppContextSetup(webApplicationContext)
 	    		// Spring Securityの設定をテストに反映させるために必要
@@ -36,7 +36,11 @@ class MainControllerTest {
 	@WithMockUser(username = "admin", roles = { "ADMIN" })
 	void accessWithAdminToAdmin() throws Exception {
 		// /adminはADMINロールを持つユーザなら正常に表示する
-		this.mockMvc.perform(get("/admin")).andExpect(view().name("admin")).andExpect(status().isOk());
+		// @formatter:off
+		this.mockMvc.perform(get("/admin"))
+				.andExpect(view().name("admin"))
+				.andExpect(status().isOk());
+		// @formatter:on
 	}
 
 	@Test
