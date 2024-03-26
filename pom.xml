@@ -86,7 +86,4 @@
 			</plugin>
 		</plugins>
 	</build>
-   <resource> 
-       <directory>${basedir}/src/main/resources</directory> 
-   </resource>
 </project>
